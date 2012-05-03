@@ -1,0 +1,6 @@
+org.greencheek.processio.domain.jmx
+org.greencheek.processio.service
+org.greencheek.processio.service.io
+org.greencheek.processio.service.persistence
+org.greencheek.processio.service.scheduler
+org.greencheek.processio.service.usage

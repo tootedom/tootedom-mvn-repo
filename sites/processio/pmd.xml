@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.3" timestamp="2012-05-03T07:19:09.925">
+<file name="/Users/dominictootell/git/linux-jvm-processio/target/checkout/src/main/java/org/greencheek/processio/agent/ProcessIOAgent.java">
+<violation beginline="105" endline="105" begincolumn="23" endcolumn="55" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.greencheek.processio.agent" class="ProcessIOAgent" method="premain" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+<file name="/Users/dominictootell/git/linux-jvm-processio/target/checkout/src/main/java/org/greencheek/processio/service/io/FileSystemProcIOProcessIOReader.java">
+<violation beginline="19" endline="19" begincolumn="1" endcolumn="59" rule="ImportFromSamePackage" ruleset="Import Statement Rules" package="org.greencheek.processio.service.io" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#ImportFromSamePackage" priority="3">
+No need to import a type that lives in the same package
+</violation>
+<violation beginline="114" endline="114" begincolumn="23" endcolumn="56" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.greencheek.processio.service.io" class="FileSystemProcIOProcessIOReader" method="getCurrentProcessIO" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="120" endline="120" begincolumn="23" endcolumn="56" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.greencheek.processio.service.io" class="FileSystemProcIOProcessIOReader" method="getCurrentProcessIO" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="130" endline="132" begincolumn="19" endcolumn="17" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.greencheek.processio.service.io" class="FileSystemProcIOProcessIOReader" method="getCurrentProcessIO" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+<file name="/Users/dominictootell/git/linux-jvm-processio/target/checkout/src/main/java/org/greencheek/processio/service/persistence/jmx/ProcessIOUsagePersistenceViaJmx.java">
+<violation beginline="52" endline="54" begincolumn="11" endcolumn="9" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.greencheek.processio.service.persistence.jmx" class="ProcessIOUsagePersistenceViaJmx" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+</pmd>
