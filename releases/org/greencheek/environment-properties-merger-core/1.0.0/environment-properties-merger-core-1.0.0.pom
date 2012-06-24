@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>environment-properties-merger-core</artifactId>
+
+    <name>Environmental Properties Merger Core</name>
+    <description>A properties reader that allows configuration to be read from different files based on environmental or system properties</description>
+
+
+    <parent>
+        <groupId>org.greencheek</groupId>
+        <artifactId>environment-properties-merger</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+</project>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>Environmental Properties Merger and Spring Property Placeholder - Checkstyle report</title>
+    <link>https://github.com/tootedom/EnvironmentalPropertiesPlaceholder</link>
+    <description>Environmental Properties Merger and Spring Property Placeholder - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2012</copyright>
+    <item>
+      <title>File: 30,
+             Errors: 1499,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html</link>
+      <description>
+        <p>Click <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.value.ValueResolver.java">org/greencheek/utils/environment/propertyplaceholder/resolver/value/ValueResolver.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  39
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.resource.ResourceLoader.java">org/greencheek/utils/environment/propertyplaceholder/resolver/resource/ResourceLoader.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  12
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.EnvironmentSpecificPropertiesResolver.java">org/greencheek/utils/environment/propertyplaceholder/resolver/EnvironmentSpecificPropertiesResolver.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  46
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.environment.OperatingEnvironmentVariableReader.java">org/greencheek/utils/environment/propertyplaceholder/resolver/environment/OperatingEnvironmentVariableReader.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.resource.ClassPathResource.java">org/greencheek/utils/environment/propertyplaceholder/resolver/resource/ClassPathResource.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  26
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.resource.ClassPathResourceLoader.java">org/greencheek/utils/environment/propertyplaceholder/resolver/resource/ClassPathResourceLoader.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  27
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.resource.FileSystemResource.java">org/greencheek/utils/environment/propertyplaceholder/resolver/resource/FileSystemResource.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  25
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.builder.CompositeResolvedPropertiesBuilder.java">org/greencheek/utils/environment/propertyplaceholder/resolver/builder/CompositeResolvedPropertiesBuilder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  120
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.builder.PropertiesResolverBuilder.java">org/greencheek/utils/environment/propertyplaceholder/builder/PropertiesResolverBuilder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  36
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.builder.EnvironmentSpecificPropertiesResolverBuilder.java">org/greencheek/utils/environment/propertyplaceholder/builder/EnvironmentSpecificPropertiesResolverBuilder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  31
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.builder.ResolvedPropertiesBuilder.java">org/greencheek/utils/environment/propertyplaceholder/resolver/builder/ResolvedPropertiesBuilder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  23
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.merger.PropertiesMerger.java">org/greencheek/utils/environment/propertyplaceholder/merger/PropertiesMerger.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  13
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.spring.ListBasedMutablePropertySources.java">org/greencheek/utils/environment/propertyplaceholder/spring/ListBasedMutablePropertySources.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  25
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.environment.JavaPlatformOperatingEnvironmentProperties.java">org/greencheek/utils/environment/propertyplaceholder/resolver/environment/JavaPlatformOperatingEnvironmentProperties.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.resource.ResourceLoaderFactory.java">org/greencheek/utils/environment/propertyplaceholder/resolver/resource/ResourceLoaderFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.resource.PrefixBasedResourceLoaderFactory.java">org/greencheek/utils/environment/propertyplaceholder/resolver/resource/PrefixBasedResourceLoaderFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  46
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.merger.EnvironmentSpecificPropertiesMerger.java">org/greencheek/utils/environment/propertyplaceholder/merger/EnvironmentSpecificPropertiesMerger.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  222
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.builder.PropertiesMergerBuilder.java">org/greencheek/utils/environment/propertyplaceholder/builder/PropertiesMergerBuilder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  201
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.resource.Resource.java">org/greencheek/utils/environment/propertyplaceholder/resolver/resource/Resource.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  5
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.exception.NoMatchingPropertyException.java">org/greencheek/utils/environment/propertyplaceholder/resolver/exception/NoMatchingPropertyException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.value.VariablePlaceholderValueResolverConfig.java">org/greencheek/utils/environment/propertyplaceholder/resolver/value/VariablePlaceholderValueResolverConfig.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  57
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.value.VariablePlaceholderValueResolver.java">org/greencheek/utils/environment/propertyplaceholder/resolver/value/VariablePlaceholderValueResolver.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  194
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.environment.OperatingEnvironmentProperties.java">org/greencheek/utils/environment/propertyplaceholder/resolver/environment/OperatingEnvironmentProperties.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.exception.NoDefaultPropertiesFileException.java">org/greencheek/utils/environment/propertyplaceholder/resolver/exception/NoDefaultPropertiesFileException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  5
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.builder.EnvironmentSpecificPropertiesMergerBuilder.java">org/greencheek/utils/environment/propertyplaceholder/builder/EnvironmentSpecificPropertiesMergerBuilder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  155
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.PropertiesResolver.java">org/greencheek/utils/environment/propertyplaceholder/resolver/PropertiesResolver.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  11
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.value.ValueResolverConfig.java">org/greencheek/utils/environment/propertyplaceholder/resolver/value/ValueResolverConfig.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  50
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.resource.FileSystemResourceLoader.java">org/greencheek/utils/environment/propertyplaceholder/resolver/resource/FileSystemResourceLoader.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  22
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.spring.EnvironmentalPropertySourcesPlaceholderConfigurerWithSpringValueResolution.java">org/greencheek/utils/environment/propertyplaceholder/spring/EnvironmentalPropertySourcesPlaceholderConfigurerWithSpringValueResolution.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  51
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/tootedom/EnvironmentalPropertiesPlaceholder/checkstyle.html#org.greencheek.utils.environment.propertyplaceholder.resolver.environment.JavaPlatformOperatingEnvironmentVariableReader.java">org/greencheek/utils/environment/propertyplaceholder/resolver/environment/JavaPlatformOperatingEnvironmentVariableReader.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  21
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

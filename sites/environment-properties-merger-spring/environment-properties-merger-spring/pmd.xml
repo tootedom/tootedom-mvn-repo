@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.3" timestamp="2012-06-24T17:23:00.855">
+<file name="/Users/dominictootell/git/EnvironmentalPropertiesPlaceholder/target/checkout/SpringEnvironmentalPropertySourcesPlaceholderConfigurer/src/main/java/org/greencheek/utils/environment/propertyplaceholder/spring/EnvironmentalPropertySourcesPlaceholderConfigurerWithSpringValueResolution.java">
+<violation beginline="19" endline="19" begincolumn="1" endcolumn="84" rule="UnusedImports" ruleset="Import Statement Rules" package="org.greencheek.utils.environment.propertyplaceholder.spring" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.greencheek.utils.environment.propertyplaceholder.merger.PropertiesMerger'
+</violation>
+<violation beginline="20" endline="20" begincolumn="1" endcolumn="48" rule="UnusedImports" ruleset="Import Statement Rules" package="org.greencheek.utils.environment.propertyplaceholder.spring" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.springframework.beans.BeansException'
+</violation>
+<violation beginline="21" endline="21" begincolumn="1" endcolumn="69" rule="UnusedImports" ruleset="Import Statement Rules" package="org.greencheek.utils.environment.propertyplaceholder.spring" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.springframework.beans.factory.BeanInitializationException'
+</violation>
+<violation beginline="23" endline="23" begincolumn="1" endcolumn="80" rule="UnusedImports" ruleset="Import Statement Rules" package="org.greencheek.utils.environment.propertyplaceholder.spring" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.springframework.beans.factory.config.ConfigurableListableBeanFactory'
+</violation>
+<violation beginline="27" endline="27" begincolumn="1" endcolumn="27" rule="UnusedImports" ruleset="Import Statement Rules" package="org.greencheek.utils.environment.propertyplaceholder.spring" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.io.IOException'
+</violation>
+</file>
+<file name="/Users/dominictootell/git/EnvironmentalPropertiesPlaceholder/target/checkout/SpringEnvironmentalPropertySourcesPlaceholderConfigurer/src/main/java/org/greencheek/utils/environment/propertyplaceholder/spring/ListBasedMutablePropertySources.java">
+<violation beginline="52" endline="61" begincolumn="12" endcolumn="5" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.greencheek.utils.environment.propertyplaceholder.spring" class="ListBasedMutablePropertySources" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused constructor parameters such as 'customPropertySources'.
+</violation>
+</file>
+</pmd>
