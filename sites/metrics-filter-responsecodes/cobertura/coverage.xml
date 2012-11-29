@@ -1,0 +1,661 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.8466257668711656" branch-rate="0.8235294117647058" lines-covered="138" lines-valid="163" branches-covered="28" branches-valid="34" complexity="1.5897435897435896" version="1.9.4.1" timestamp="1354148080048">
+	<sources>
+		<source>--source</source>
+		<source>/Users/dominictootell/git/responsecodesfilter/target/checkout/src/main/java</source>
+	</sources>
+	<packages>
+		<package name="org.greencheek.yammer.metrics.web.filter" line-rate="0.8466257668711656" branch-rate="0.8235294117647058" complexity="1.5897435897435896">
+			<classes>
+				<class name="org.greencheek.yammer.metrics.web.filter.AsyncResponseCodeFilter" filename="org/greencheek/yammer/metrics/web/filter/AsyncResponseCodeFilter.java" line-rate="0.0" branch-rate="0.0" complexity="1.1666666666666667">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="34" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="doFilter" signature="(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="38" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="45" hits="0" branch="false"/>
+								<line number="47" hits="0" branch="false"/>
+								<line number="49" hits="0" branch="false"/>
+								<line number="50" hits="0" branch="false"/>
+								<line number="51" hits="0" branch="false"/>
+								<line number="53" hits="0" branch="false"/>
+								<line number="54" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="34" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="45" hits="0" branch="false"/>
+						<line number="47" hits="0" branch="false"/>
+						<line number="49" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="53" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.greencheek.yammer.metrics.web.filter.AsyncResponseCodeFilter$AsyncMetricsRequestResponseListener" filename="org/greencheek/yammer/metrics/web/filter/AsyncResponseCodeFilter.java" line-rate="0.0" branch-rate="1.0" complexity="1.1666666666666667">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/greencheek/yammer/metrics/web/filter/AsyncResponseCodeFilter;Ljavax/servlet/http/HttpServletRequest;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="60" hits="0" branch="false"/>
+								<line number="61" hits="0" branch="false"/>
+								<line number="62" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="onComplete" signature="(Ljavax/servlet/AsyncEvent;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="66" hits="0" branch="false"/>
+								<line number="67" hits="0" branch="false"/>
+								<line number="68" hits="0" branch="false"/>
+								<line number="69" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="onError" signature="(Ljavax/servlet/AsyncEvent;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="78" hits="0" branch="false"/>
+								<line number="79" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="onStartAsync" signature="(Ljavax/servlet/AsyncEvent;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="83" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="onTimeout" signature="(Ljavax/servlet/AsyncEvent;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="73" hits="0" branch="false"/>
+								<line number="74" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="60" hits="0" branch="false"/>
+						<line number="61" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="66" hits="0" branch="false"/>
+						<line number="67" hits="0" branch="false"/>
+						<line number="68" hits="0" branch="false"/>
+						<line number="69" hits="0" branch="false"/>
+						<line number="73" hits="0" branch="false"/>
+						<line number="74" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="79" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.greencheek.yammer.metrics.web.filter.ResponseCodeFilter" filename="org/greencheek/yammer/metrics/web/filter/ResponseCodeFilter.java" line-rate="0.9917355371900827" branch-rate="0.875" complexity="1.7857142857142858">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="41" hits="1" branch="false"/>
+								<line number="50" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="111" hits="12" branch="false"/>
+								<line number="155" hits="12" branch="false"/>
+								<line number="156" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="addRatioGauge" signature="(Ljava/util/List;[Lcom/yammer/metrics/core/Gauge;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="301" hits="36" branch="false"/>
+								<line number="302" hits="36" branch="false"/>
+							</lines>
+						</method>
+						<method name="createAdminEndPointMetrics" signature="(Ljavax/servlet/FilterConfig;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="230" hits="12" branch="false"/>
+								<line number="231" hits="12" branch="false"/>
+								<line number="232" hits="12" branch="false"/>
+								<line number="233" hits="12" branch="false"/>
+								<line number="234" hits="12" branch="false"/>
+								<line number="235" hits="12" branch="false"/>
+								<line number="236" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="createFiveMinRatio" signature="(Lcom/yammer/metrics/core/Meter;Lcom/yammer/metrics/core/Meter;)Lcom/yammer/metrics/util/RatioGauge;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="287" hits="36" branch="false"/>
+							</lines>
+						</method>
+						<method name="createMetricName" signature="(Ljava/lang/String;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="122" hits="276" branch="false"/>
+								<line number="123" hits="276" branch="false"/>
+							</lines>
+						</method>
+						<method name="createMetricNames" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="132" hits="12" branch="false"/>
+								<line number="133" hits="12" branch="false"/>
+								<line number="134" hits="12" branch="false"/>
+								<line number="135" hits="12" branch="false"/>
+								<line number="136" hits="12" branch="false"/>
+								<line number="138" hits="12" branch="false"/>
+								<line number="139" hits="12" branch="false"/>
+								<line number="140" hits="12" branch="false"/>
+								<line number="141" hits="12" branch="false"/>
+								<line number="142" hits="12" branch="false"/>
+								<line number="143" hits="12" branch="false"/>
+								<line number="145" hits="12" branch="false"/>
+								<line number="146" hits="12" branch="false"/>
+								<line number="147" hits="12" branch="false"/>
+								<line number="148" hits="12" branch="false"/>
+								<line number="149" hits="12" branch="false"/>
+								<line number="150" hits="12" branch="false"/>
+								<line number="152" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="createMetrics" signature="(Ljavax/servlet/FilterConfig;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="196" hits="12" branch="false"/>
+								<line number="200" hits="12" branch="false"/>
+								<line number="203" hits="12" branch="false"/>
+								<line number="206" hits="12" branch="false"/>
+								<line number="215" hits="12" branch="false"/>
+								<line number="217" hits="12" branch="false"/>
+								<line number="218" hits="12" branch="false"/>
+								<line number="219" hits="12" branch="false"/>
+								<line number="221" hits="12" branch="false"/>
+								<line number="222" hits="12" branch="false"/>
+								<line number="223" hits="12" branch="false"/>
+								<line number="224" hits="12" branch="false"/>
+								<line number="225" hits="12" branch="false"/>
+								<line number="226" hits="12" branch="false"/>
+								<line number="227" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="createNonSuccessRatio" signature="(Lcom/yammer/metrics/core/Meter;Lcom/yammer/metrics/core/Meter;Ljava/lang/String;)[Lcom/yammer/metrics/core/Gauge;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="257" hits="36" branch="false"/>
+								<line number="258" hits="36" branch="false"/>
+								<line number="261" hits="36" branch="false"/>
+								<line number="262" hits="36" branch="false"/>
+								<line number="264" hits="36" branch="false"/>
+							</lines>
+						</method>
+						<method name="createOneMinRatio" signature="(Lcom/yammer/metrics/core/Meter;Lcom/yammer/metrics/core/Meter;)Lcom/yammer/metrics/util/RatioGauge;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="273" hits="36" branch="false"/>
+							</lines>
+						</method>
+						<method name="createRequestBasedMetricName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="114" hits="204" branch="false"/>
+								<line number="115" hits="204" branch="false"/>
+							</lines>
+						</method>
+						<method name="createResponseBasedMetricName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="118" hits="72" branch="false"/>
+								<line number="119" hits="72" branch="false"/>
+							</lines>
+						</method>
+						<method name="destroy" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="307" hits="12" branch="false"/>
+								<line number="308" hits="12" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="309" hits="276" branch="false"/>
+								<line number="312" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="doFilter" signature="(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="316" hits="37" branch="false"/>
+								<line number="319" hits="37" branch="false"/>
+								<line number="321" hits="37" branch="false"/>
+								<line number="323" hits="37" branch="false"/>
+								<line number="324" hits="37" branch="false"/>
+								<line number="325" hits="37" branch="false"/>
+								<line number="326" hits="37" branch="false"/>
+								<line number="327" hits="37" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFilterName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="168" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="getInitParam" signature="(Ljava/lang/String;Ljava/lang/String;Ljavax/servlet/FilterConfig;)Ljava/lang/String;" line-rate="0.75" branch-rate="0.25">
+							<lines>
+								<line number="248" hits="48" branch="false"/>
+								<line number="249" hits="48" branch="true" condition-coverage="25% (1/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="250" hits="48" branch="false"/>
+								<line number="252" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMetricsGroupName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="126" hits="33" branch="false"/>
+								<line number="127" hits="33" branch="false"/>
+								<line number="128" hits="33" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTimerForCurrentRequestMethodType" signature="(Ljava/lang/String;)Lcom/yammer/metrics/core/Timer;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="336" hits="37" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="337" hits="21" branch="false"/>
+								<line number="338" hits="16" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="339" hits="11" branch="false"/>
+								<line number="340" hits="5" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="341" hits="1" branch="false"/>
+								<line number="342" hits="4" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="343" hits="1" branch="false"/>
+								<line number="344" hits="3" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="345" hits="1" branch="false"/>
+								<line number="347" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="init" signature="(Ljavax/servlet/FilterConfig;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="184" hits="12" branch="false"/>
+								<line number="187" hits="12" branch="false"/>
+								<line number="190" hits="12" branch="false"/>
+								<line number="191" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="readAdminConfigUrls" signature="(Ljavax/servlet/FilterConfig;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="240" hits="12" branch="false"/>
+								<line number="241" hits="12" branch="false"/>
+								<line number="242" hits="12" branch="false"/>
+								<line number="243" hits="12" branch="false"/>
+								<line number="244" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFilterName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="0.75">
+							<lines>
+								<line number="163" hits="12" branch="true" condition-coverage="75% (3/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="164" hits="2" branch="false"/>
+								<line number="165" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFilterName" signature="(Ljavax/servlet/FilterConfig;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="159" hits="12" branch="false"/>
+								<line number="160" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="setMonitoringGrouping" signature="(Ljavax/servlet/FilterConfig;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="172" hits="12" branch="false"/>
+								<line number="173" hits="12" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="174" hits="5" branch="false"/>
+								<line number="176" hits="12" branch="false"/>
+								<line number="177" hits="12" branch="true" condition-coverage="100% (4/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="178" hits="2" branch="false"/>
+								<line number="179" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="updateAdminMetricsIfRequestMatched" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="330" hits="37" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="331" hits="1" branch="false"/>
+								<line number="333" hits="37" branch="false"/>
+							</lines>
+						</method>
+						<method name="updateResponseRate" signature="(I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="352" hits="37" branch="false"/>
+								<line number="353" hits="37" branch="true" condition-coverage="100% (4/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="354" hits="4" branch="false"/>
+								<line number="356" hits="33" branch="false"/>
+								<line number="358" hits="37" branch="false"/>
+								<line number="359" hits="37" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="1" branch="false"/>
+						<line number="50" hits="1" branch="false"/>
+						<line number="111" hits="12" branch="false"/>
+						<line number="114" hits="204" branch="false"/>
+						<line number="115" hits="204" branch="false"/>
+						<line number="118" hits="72" branch="false"/>
+						<line number="119" hits="72" branch="false"/>
+						<line number="122" hits="276" branch="false"/>
+						<line number="123" hits="276" branch="false"/>
+						<line number="126" hits="33" branch="false"/>
+						<line number="127" hits="33" branch="false"/>
+						<line number="128" hits="33" branch="false"/>
+						<line number="132" hits="12" branch="false"/>
+						<line number="133" hits="12" branch="false"/>
+						<line number="134" hits="12" branch="false"/>
+						<line number="135" hits="12" branch="false"/>
+						<line number="136" hits="12" branch="false"/>
+						<line number="138" hits="12" branch="false"/>
+						<line number="139" hits="12" branch="false"/>
+						<line number="140" hits="12" branch="false"/>
+						<line number="141" hits="12" branch="false"/>
+						<line number="142" hits="12" branch="false"/>
+						<line number="143" hits="12" branch="false"/>
+						<line number="145" hits="12" branch="false"/>
+						<line number="146" hits="12" branch="false"/>
+						<line number="147" hits="12" branch="false"/>
+						<line number="148" hits="12" branch="false"/>
+						<line number="149" hits="12" branch="false"/>
+						<line number="150" hits="12" branch="false"/>
+						<line number="152" hits="12" branch="false"/>
+						<line number="155" hits="12" branch="false"/>
+						<line number="156" hits="12" branch="false"/>
+						<line number="159" hits="12" branch="false"/>
+						<line number="160" hits="12" branch="false"/>
+						<line number="163" hits="12" branch="true" condition-coverage="75% (3/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="164" hits="2" branch="false"/>
+						<line number="165" hits="12" branch="false"/>
+						<line number="168" hits="12" branch="false"/>
+						<line number="172" hits="12" branch="false"/>
+						<line number="173" hits="12" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="174" hits="5" branch="false"/>
+						<line number="176" hits="12" branch="false"/>
+						<line number="177" hits="12" branch="true" condition-coverage="100% (4/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="178" hits="2" branch="false"/>
+						<line number="179" hits="12" branch="false"/>
+						<line number="184" hits="12" branch="false"/>
+						<line number="187" hits="12" branch="false"/>
+						<line number="190" hits="12" branch="false"/>
+						<line number="191" hits="12" branch="false"/>
+						<line number="196" hits="12" branch="false"/>
+						<line number="200" hits="12" branch="false"/>
+						<line number="203" hits="12" branch="false"/>
+						<line number="206" hits="12" branch="false"/>
+						<line number="215" hits="12" branch="false"/>
+						<line number="217" hits="12" branch="false"/>
+						<line number="218" hits="12" branch="false"/>
+						<line number="219" hits="12" branch="false"/>
+						<line number="221" hits="12" branch="false"/>
+						<line number="222" hits="12" branch="false"/>
+						<line number="223" hits="12" branch="false"/>
+						<line number="224" hits="12" branch="false"/>
+						<line number="225" hits="12" branch="false"/>
+						<line number="226" hits="12" branch="false"/>
+						<line number="227" hits="12" branch="false"/>
+						<line number="230" hits="12" branch="false"/>
+						<line number="231" hits="12" branch="false"/>
+						<line number="232" hits="12" branch="false"/>
+						<line number="233" hits="12" branch="false"/>
+						<line number="234" hits="12" branch="false"/>
+						<line number="235" hits="12" branch="false"/>
+						<line number="236" hits="12" branch="false"/>
+						<line number="240" hits="12" branch="false"/>
+						<line number="241" hits="12" branch="false"/>
+						<line number="242" hits="12" branch="false"/>
+						<line number="243" hits="12" branch="false"/>
+						<line number="244" hits="12" branch="false"/>
+						<line number="248" hits="48" branch="false"/>
+						<line number="249" hits="48" branch="true" condition-coverage="25% (1/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="250" hits="48" branch="false"/>
+						<line number="252" hits="0" branch="false"/>
+						<line number="257" hits="36" branch="false"/>
+						<line number="258" hits="36" branch="false"/>
+						<line number="261" hits="36" branch="false"/>
+						<line number="262" hits="36" branch="false"/>
+						<line number="264" hits="36" branch="false"/>
+						<line number="273" hits="36" branch="false"/>
+						<line number="287" hits="36" branch="false"/>
+						<line number="301" hits="36" branch="false"/>
+						<line number="302" hits="36" branch="false"/>
+						<line number="307" hits="12" branch="false"/>
+						<line number="308" hits="12" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="309" hits="276" branch="false"/>
+						<line number="312" hits="12" branch="false"/>
+						<line number="316" hits="37" branch="false"/>
+						<line number="319" hits="37" branch="false"/>
+						<line number="321" hits="37" branch="false"/>
+						<line number="323" hits="37" branch="false"/>
+						<line number="324" hits="37" branch="false"/>
+						<line number="325" hits="37" branch="false"/>
+						<line number="326" hits="37" branch="false"/>
+						<line number="327" hits="37" branch="false"/>
+						<line number="330" hits="37" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="331" hits="1" branch="false"/>
+						<line number="333" hits="37" branch="false"/>
+						<line number="336" hits="37" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="337" hits="21" branch="false"/>
+						<line number="338" hits="16" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="339" hits="11" branch="false"/>
+						<line number="340" hits="5" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="341" hits="1" branch="false"/>
+						<line number="342" hits="4" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="343" hits="1" branch="false"/>
+						<line number="344" hits="3" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="345" hits="1" branch="false"/>
+						<line number="347" hits="2" branch="false"/>
+						<line number="352" hits="37" branch="false"/>
+						<line number="353" hits="37" branch="true" condition-coverage="100% (4/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="354" hits="4" branch="false"/>
+						<line number="356" hits="33" branch="false"/>
+						<line number="358" hits="37" branch="false"/>
+						<line number="359" hits="37" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.greencheek.yammer.metrics.web.filter.ResponseCodeFilter$1" filename="org/greencheek/yammer/metrics/web/filter/ResponseCodeFilter.java" line-rate="1.0" branch-rate="1.0" complexity="1.7857142857142858">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/greencheek/yammer/metrics/web/filter/ResponseCodeFilter;Lcom/yammer/metrics/core/Meter;Lcom/yammer/metrics/core/Meter;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="273" hits="36" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDenominator" signature="()D" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="281" hits="39" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNumerator" signature="()D" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="276" hits="9" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="273" hits="36" branch="false"/>
+						<line number="276" hits="9" branch="false"/>
+						<line number="281" hits="39" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.greencheek.yammer.metrics.web.filter.ResponseCodeFilter$2" filename="org/greencheek/yammer/metrics/web/filter/ResponseCodeFilter.java" line-rate="1.0" branch-rate="1.0" complexity="1.7857142857142858">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/greencheek/yammer/metrics/web/filter/ResponseCodeFilter;Lcom/yammer/metrics/core/Meter;Lcom/yammer/metrics/core/Meter;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="287" hits="36" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDenominator" signature="()D" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="295" hits="39" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNumerator" signature="()D" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="290" hits="9" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="287" hits="36" branch="false"/>
+						<line number="290" hits="9" branch="false"/>
+						<line number="295" hits="39" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.greencheek.yammer.metrics.web.filter.StatusExposingServletResponse" filename="org/greencheek/yammer/metrics/web/filter/StatusExposingServletResponse.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljavax/servlet/http/HttpServletResponse;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="11" hits="37" branch="false"/>
+								<line number="12" hits="37" branch="false"/>
+							</lines>
+						</method>
+						<method name="getStatus" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="33" hits="37" branch="false"/>
+							</lines>
+						</method>
+						<method name="sendError" signature="(I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="16" hits="2" branch="false"/>
+								<line number="17" hits="2" branch="false"/>
+								<line number="18" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="sendError" signature="(ILjava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="22" hits="1" branch="false"/>
+								<line number="23" hits="1" branch="false"/>
+								<line number="24" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setStatus" signature="(I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="28" hits="2" branch="false"/>
+								<line number="29" hits="2" branch="false"/>
+								<line number="30" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="11" hits="37" branch="false"/>
+						<line number="12" hits="37" branch="false"/>
+						<line number="16" hits="2" branch="false"/>
+						<line number="17" hits="2" branch="false"/>
+						<line number="18" hits="2" branch="false"/>
+						<line number="22" hits="1" branch="false"/>
+						<line number="23" hits="1" branch="false"/>
+						<line number="24" hits="1" branch="false"/>
+						<line number="28" hits="2" branch="false"/>
+						<line number="29" hits="2" branch="false"/>
+						<line number="30" hits="2" branch="false"/>
+						<line number="33" hits="37" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>

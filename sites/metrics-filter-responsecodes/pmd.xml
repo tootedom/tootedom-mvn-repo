@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.3" timestamp="2012-11-29T00:14:37.051">
+<file name="/Users/dominictootell/git/responsecodesfilter/target/checkout/src/main/java/org/greencheek/yammer/metrics/web/filter/AsyncResponseCodeFilter.java">
+<violation beginline="21" endline="21" begincolumn="1" endcolumn="42" rule="UnusedImports" ruleset="Import Statement Rules" package="org.greencheek.yammer.metrics.web.filter" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'javax.servlet.annotation.WebFilter'
+</violation>
+<violation beginline="51" endline="53" begincolumn="11" endcolumn="9" rule="EmptyFinallyBlock" ruleset="Basic Rules" package="org.greencheek.yammer.metrics.web.filter" class="AsyncResponseCodeFilter" method="doFilter" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyFinallyBlock" priority="3">
+Avoid empty finally blocks
+</violation>
+</file>
+</pmd>
