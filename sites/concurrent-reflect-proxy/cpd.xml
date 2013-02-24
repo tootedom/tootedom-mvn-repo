@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+<duplication lines="106" tokens="446">
+<file line="751" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="1015" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+    public ConcurrentWeakHashMap(Map<? extends K, ? extends V> m) {
+        this(Math.max((int) (m.size() / DEFAULT_LOAD_FACTOR) + 1,
+                      DEFAULT_INITIAL_CAPACITY),
+             DEFAULT_LOAD_FACTOR, DEFAULT_CONCURRENCY_LEVEL);
+        putAll(m);
+    }
+
+    /**
+     * Returns <tt>true</tt> if this map contains no key-value mappings.
+     *
+     * @return <tt>true</tt> if this map contains no key-value mappings
+     */
+    public boolean isEmpty() {
+        final Segment<K,V>[] segments = this.segments;
+        /*
+         * We keep track of per-segment modCounts to avoid ABA
+         * problems in which an element in one segment was added and
+         * in another removed during traversal, in which case the
+         * table was never actually empty at any point. Note the
+         * similar use of modCounts in the size() and containsValue()
+         * methods, which are the only other methods also susceptible
+         * to ABA problems.
+         */
+        int[] mc = new int[segments.length];
+        int mcsum = 0;
+        for (int i = 0; i < segments.length; ++i) {
+            if (segments[i].count != 0)
+                return false;
+            else
+                mcsum += mc[i] = segments[i].modCount;
+        }
+        // If mcsum happens to be zero, then we know we got a snapshot
+        // before any modifications at all were made.  This is
+        // probably common enough to bother tracking.
+        if (mcsum != 0) {
+            for (int i = 0; i < segments.length; ++i) {
+                if (segments[i].count != 0 ||
+                    mc[i] != segments[i].modCount)
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Returns the number of key-value mappings in this map.  If the
+     * map contains more than <tt>Integer.MAX_VALUE</tt> elements, returns
+     * <tt>Integer.MAX_VALUE</tt>.
+     *
+     * @return the number of key-value mappings in this map
+     */
+    public int size() {
+        final Segment<K,V>[] segments = this.segments;
+        long sum = 0;
+        long check = 0;
+        int[] mc = new int[segments.length];
+        // Try a few times to get accurate count. On failure due to
+        // continuous async changes in table, resort to locking.
+        for (int k = 0; k < RETRIES_BEFORE_LOCK; ++k) {
+            check = 0;
+            sum = 0;
+            int mcsum = 0;
+            for (int i = 0; i < segments.length; ++i) {
+                sum += segments[i].count;
+                mcsum += mc[i] = segments[i].modCount;
+            }
+            if (mcsum != 0) {
+                for (int i = 0; i < segments.length; ++i) {
+                    check += segments[i].count;
+                    if (mc[i] != segments[i].modCount) {
+                        check = -1; // force retry
+                        break;
+                    }
+                }
+            }
+            if (check == sum)
+                break;
+        }
+        if (check != sum) { // Resort to locking all segments
+            sum = 0;
+            for (int i = 0; i < segments.length; ++i)
+                segments[i].lock();
+            for (int i = 0; i < segments.length; ++i)
+                sum += segments[i].count;
+            for (int i = 0; i < segments.length; ++i)
+                segments[i].unlock();
+        }
+        if (sum > Integer.MAX_VALUE)
+            return Integer.MAX_VALUE;
+        else
+            return (int)sum;
+    }
+
+    /**
+     * Returns the value to which the specified key is mapped,
+     * or {@code null} if this map contains no mapping for the key.
+     *
+     * <p>More formally, if this map contains a mapping from a key
+     * {@code k} to a value {@code v} such that {@code key.equals(k)},
+     * then this method returns {@code v}; otherwise it returns
+     * {@code null}.  (There can be at most one such mapping.)
+     *
+     * @throws NullPointerException if the specified key is null
+     */
+    public V get(Object key) {
+        int hash = hash(key.hashCode());
+]]>
+</codefragment>
+</duplication>
+<duplication lines="130" tokens="351">
+<file line="1057" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="1334" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+            segments[i].clear();
+    }
+
+    /**
+     * Returns a {@link Set} view of the keys contained in this map.
+     * The set is backed by the map, so changes to the map are
+     * reflected in the set, and vice-versa.  The set supports element
+     * removal, which removes the corresponding mapping from this map,
+     * via the <tt>Iterator.remove</tt>, <tt>Set.remove</tt>,
+     * <tt>removeAll</tt>, <tt>retainAll</tt>, and <tt>clear</tt>
+     * operations.  It does not support the <tt>add</tt> or
+     * <tt>addAll</tt> operations.
+     *
+     * <p>The view's <tt>iterator</tt> is a "weakly consistent" iterator
+     * that will never throw {@link ConcurrentModificationException},
+     * and guarantees to traverse elements as they existed upon
+     * construction of the iterator, and may (but is not guaranteed to)
+     * reflect any modifications subsequent to construction.
+     */
+    public Set<K> keySet() {
+        Set<K> ks = keySet;
+        return (ks != null) ? ks : (keySet = new KeySet());
+    }
+
+    /**
+     * Returns a {@link Collection} view of the values contained in this map.
+     * The collection is backed by the map, so changes to the map are
+     * reflected in the collection, and vice-versa.  The collection
+     * supports element removal, which removes the corresponding
+     * mapping from this map, via the <tt>Iterator.remove</tt>,
+     * <tt>Collection.remove</tt>, <tt>removeAll</tt>,
+     * <tt>retainAll</tt>, and <tt>clear</tt> operations.  It does not
+     * support the <tt>add</tt> or <tt>addAll</tt> operations.
+     *
+     * <p>The view's <tt>iterator</tt> is a "weakly consistent" iterator
+     * that will never throw {@link ConcurrentModificationException},
+     * and guarantees to traverse elements as they existed upon
+     * construction of the iterator, and may (but is not guaranteed to)
+     * reflect any modifications subsequent to construction.
+     */
+    public Collection<V> values() {
+        Collection<V> vs = values;
+        return (vs != null) ? vs : (values = new Values());
+    }
+
+    /**
+     * Returns a {@link Set} view of the mappings contained in this map.
+     * The set is backed by the map, so changes to the map are
+     * reflected in the set, and vice-versa.  The set supports element
+     * removal, which removes the corresponding mapping from the map,
+     * via the <tt>Iterator.remove</tt>, <tt>Set.remove</tt>,
+     * <tt>removeAll</tt>, <tt>retainAll</tt>, and <tt>clear</tt>
+     * operations.  It does not support the <tt>add</tt> or
+     * <tt>addAll</tt> operations.
+     *
+     * <p>The view's <tt>iterator</tt> is a "weakly consistent" iterator
+     * that will never throw {@link ConcurrentModificationException},
+     * and guarantees to traverse elements as they existed upon
+     * construction of the iterator, and may (but is not guaranteed to)
+     * reflect any modifications subsequent to construction.
+     */
+    public Set<Map.Entry<K,V>> entrySet() {
+        Set<Map.Entry<K,V>> es = entrySet;
+        return (es != null) ? es : (entrySet = new EntrySet());
+    }
+
+    /**
+     * Returns an enumeration of the keys in this table.
+     *
+     * @return an enumeration of the keys in this table
+     * @see #keySet()
+     */
+    public Enumeration<K> keys() {
+        return new KeyIterator();
+    }
+
+    /**
+     * Returns an enumeration of the values in this table.
+     *
+     * @return an enumeration of the values in this table
+     * @see #values()
+     */
+    public Enumeration<V> elements() {
+        return new ValueIterator();
+    }
+
+    /* ---------------- Iterator Support -------------- */
+
+    abstract class HashIterator {
+        int nextSegmentIndex;
+        int nextTableIndex;
+        HashEntry<K,V>[] currentTable;
+        HashEntry<K, V> nextEntry;
+        HashEntry<K, V> lastReturned;
+        K currentKey; // Strong reference to weak key (prevents gc)
+
+        HashIterator() {
+            nextSegmentIndex = segments.length - 1;
+            nextTableIndex = -1;
+            advance();
+        }
+
+        public boolean hasMoreElements() { return hasNext(); }
+
+        final void advance() {
+            if (nextEntry != null && (nextEntry = nextEntry.next) != null)
+                return;
+
+            while (nextTableIndex >= 0) {
+                if ( (nextEntry = currentTable[nextTableIndex--]) != null)
+                    return;
+            }
+
+            while (nextSegmentIndex >= 0) {
+                Segment<K,V> seg = segments[nextSegmentIndex--];
+                if (seg.count != 0) {
+                    currentTable = seg.table;
+                    for (int j = currentTable.length - 1; j >= 0; --j) {
+                        if ( (nextEntry = currentTable[j]) != null) {
+                            nextTableIndex = j - 1;
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+        public boolean hasNext() { 
+            while (nextEntry != null) {
+                if (nextEntry.keyRef.get() != null) 
+]]>
+</codefragment>
+</duplication>
+<duplication lines="64" tokens="241">
+<file line="499" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="711" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+                    tab[index] = new HashEntry<K,V>(key, hash, first, value, refQueue);
+                    count = c; // write-volatile
+                }
+                return oldValue;
+            } finally {
+                unlock();
+            }
+        }
+
+        int rehash() {
+            HashEntry<K,V>[] oldTable = table;
+            int oldCapacity = oldTable.length;
+            if (oldCapacity >= MAXIMUM_CAPACITY)
+                return 0;
+
+            /*
+             * Reclassify nodes in each list to new Map.  Because we are
+             * using power-of-two expansion, the elements from each bin
+             * must either stay at same index, or move with a power of two
+             * offset. We eliminate unnecessary node creation by catching
+             * cases where old nodes can be reused because their next
+             * fields won't change. Statistically, at the default
+             * threshold, only about one-sixth of them need cloning when
+             * a table doubles. The nodes they replace will be garbage
+             * collectable as soon as they are no longer referenced by any
+             * reader thread that may be in the midst of traversing table
+             * right now.
+             */
+
+            HashEntry<K,V>[] newTable = HashEntry.newArray(oldCapacity<<1);
+            threshold = (int)(newTable.length * loadFactor);
+            int sizeMask = newTable.length - 1;
+            int reduce = 0;
+            for (int i = 0; i < oldCapacity ; i++) {
+                // We need to guarantee that any existing reads of old Map can
+                //  proceed. So we cannot yet null out each bin.
+                HashEntry<K,V> e = oldTable[i];
+
+                if (e != null) {
+                    HashEntry<K,V> next = e.next;
+                    int idx = e.hash & sizeMask;
+
+                    //  Single node on list
+                    if (next == null)
+                        newTable[idx] = e;
+
+                    else {
+                        // Reuse trailing consecutive sequence at same slot
+                        HashEntry<K,V> lastRun = e;
+                        int lastIdx = idx;
+                        for (HashEntry<K,V> last = next;
+                             last != null;
+                             last = last.next) {
+                            int k = last.hash & sizeMask;
+                            if (k != lastIdx) {
+                                lastIdx = k;
+                                lastRun = last;
+                            }
+                        }
+                        newTable[lastIdx] = lastRun;
+                        // Clone all remaining nodes
+                        for (HashEntry<K,V> p = e; p != lastRun; p = p.next) {
+                            // Skip GC'd weak refs
+                            K key = p.keyRef.get();
+]]>
+</codefragment>
+</duplication>
+<duplication lines="43" tokens="165">
+<file line="1269" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="1544" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+            Map.Entry e = (Map.Entry) o;
+            return eq(key, e.getKey()) && eq(value, e.getValue());
+        }
+
+        public int hashCode() {
+            return (key == null ? 0 : key.hashCode())
+                    ^ (value == null ? 0 : value.hashCode());
+        }
+
+        public String toString() {
+            return key + "=" + value;
+        }
+
+        private static boolean eq(Object o1, Object o2) {
+            return o1 == null ? o2 == null : o1.equals(o2);
+        }
+    }
+
+
+    /**
+     * Custom Entry class used by EntryIterator.next(), that relays setValue
+     * changes to the underlying map.
+     */
+    final class WriteThroughEntry extends SimpleEntry<K,V>
+    {
+        private static final long serialVersionUID = -7900634345345313646L;
+
+        WriteThroughEntry(K k, V v) {
+            super(k,v);
+        }
+
+        /**
+         * Set our entry's value and write through to the map. The
+         * value to return is somewhat arbitrary here. Since a
+         * WriteThroughEntry does not necessarily track asynchronous
+         * changes, the most recent "previous" value could be
+         * different from what we return (or could even have been
+         * removed in which case the put will re-establish). We do not
+         * and cannot guarantee more.
+         */
+        public V setValue(V value) {
+            if (value == null) throw new NullPointerException();
+            V v = super.setValue(value);
+]]>
+</codefragment>
+</duplication>
+<duplication lines="63" tokens="159">
+<file line="908" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="1169" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+                    if (mc[i] != segments[i].modCount) {
+                        cleanSweep = false;
+                        break;
+                    }
+                }
+            }
+            if (cleanSweep)
+                return false;
+        }
+        // Resort to locking all segments
+        for (int i = 0; i < segments.length; ++i)
+            segments[i].lock();
+        boolean found = false;
+        try {
+            for (int i = 0; i < segments.length; ++i) {
+                if (segments[i].containsValue(value)) {
+                    found = true;
+                    break;
+                }
+            }
+        } finally {
+            for (int i = 0; i < segments.length; ++i)
+                segments[i].unlock();
+        }
+        return found;
+    }
+
+    /**
+     * Legacy method testing if some key maps into the specified value
+     * in this table.  This method is identical in functionality to
+     * {@link #containsValue}, and exists solely to ensure
+     * full compatibility with class {@link java.util.Hashtable},
+     * which supported this method prior to introduction of the
+     * Java Collections framework.
+
+     * @param  value a value to search for
+     * @return <tt>true</tt> if and only if some key maps to the
+     *         <tt>value</tt> argument in this table as
+     *         determined by the <tt>equals</tt> method;
+     *         <tt>false</tt> otherwise
+     * @throws NullPointerException if the specified value is null
+     */
+    public boolean contains(Object value) {
+        return containsValue(value);
+    }
+
+    /**
+     * Maps the specified key to the specified value in this table.
+     * Neither the key nor the value can be null.
+     *
+     * <p> The value can be retrieved by calling the <tt>get</tt> method
+     * with a key that is equal to the original key.
+     *
+     * @param key key with which the specified value is to be associated
+     * @param value value to be associated with the specified key
+     * @return the previous value associated with <tt>key</tt>, or
+     *         <tt>null</tt> if there was no mapping for <tt>key</tt>
+     * @throws NullPointerException if the specified key or value is null
+     */
+    public V put(K key, V value) {
+        if (value == null)
+            throw new NullPointerException();
+        int hash = hash(key.hashCode());
+]]>
+</codefragment>
+</duplication>
+<duplication lines="40" tokens="156">
+<file line="1228" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="1504" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+        public V nextElement() { return super.nextEntry().value; }
+    }
+
+     /*
+      * This class is needed for JDK5 compatibility.
+      */
+     static class SimpleEntry<K, V> implements Entry<K, V>,
+            java.io.Serializable {
+        private static final long serialVersionUID = -8499721149061103585L;
+
+        private final K key;
+        private V value;
+
+        public SimpleEntry(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public SimpleEntry(Entry<? extends K, ? extends V> entry) {
+            this.key = entry.getKey();
+            this.value = entry.getValue();
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
+        }
+
+        public V setValue(V value) {
+            V oldValue = this.value;
+            this.value = value;
+            return oldValue;
+        }
+
+        public boolean equals(Object o) {
+            if (!(o instanceof Map.Entry))
+                return false;
+]]>
+</codefragment>
+</duplication>
+<duplication lines="24" tokens="127">
+<file line="464" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="676" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+                }
+                return oldValue;
+            } finally {
+                unlock();
+            }
+        }
+
+
+        V put(K key, int hash, V value, boolean onlyIfAbsent) {
+            lock();
+            try {
+                removeStale();
+                int c = count;
+                if (c++ > threshold) {// ensure capacity
+                    int reduced = rehash();
+                    if (reduced > 0)  // adjust from possible weak cleanups
+                        count = (c -= reduced) - 1; // write-volatile      
+                }
+                         
+                HashEntry<K,V>[] tab = table;
+                int index = hash & (tab.length - 1);
+                HashEntry<K,V> first = tab[index];
+                HashEntry<K,V> e = first;
+                while (e != null && (e.hash != hash || !key.equals(e.keyRef.get())))
+]]>
+</codefragment>
+</duplication>
+<duplication lines="36" tokens="123">
+<file line="1420" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="1693" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+                        s.writeObject(e.value);
+                    }
+                }
+            } finally {
+                seg.unlock();
+            }
+        }
+        s.writeObject(null);
+        s.writeObject(null);
+    }
+
+    /**
+     * Reconstitute the <tt>ConcurrentWeakHashMap</tt> instance from a
+     * stream (i.e., deserialize it).
+     * @param s the stream
+     */
+    @SuppressWarnings("unchecked")
+    private void readObject(java.io.ObjectInputStream s)
+        throws IOException, ClassNotFoundException  {
+        s.defaultReadObject();
+
+        // Initialize each segment to be minimally sized, and let grow.
+        for (int i = 0; i < segments.length; ++i) {
+            segments[i].setTable(new HashEntry[1]);
+        }
+
+        // Read the keys and values, and put the mappings in the table
+        for (;;) {
+            K key = (K) s.readObject();
+            V value = (V) s.readObject();
+            if (key == null)
+                break;
+            put(key, value);
+        }
+    }
+}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="26" tokens="118">
+<file line="1390" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="1663" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+            ConcurrentWeakHashMap.this.clear();
+        }
+    }
+
+    /* ---------------- Serialization Support -------------- */
+
+    /**
+     * Save the state of the <tt>ConcurrentWeakHashMap</tt> instance to a
+     * stream (i.e., serialize it).
+     * @param s the stream
+     * @serialData
+     * the key (Object) and value (Object)
+     * for each key-value mapping, followed by a null pair.
+     * The key-value mappings are emitted in no particular order.
+     */
+    private void writeObject(java.io.ObjectOutputStream s) throws IOException  {
+        s.defaultWriteObject();
+
+        for (int k = 0; k < segments.length; ++k) {
+            Segment<K,V> seg = segments[k];
+            seg.lock();
+            try {
+                HashEntry<K,V>[] tab = seg.table;
+                for (int i = 0; i < tab.length; ++i) {
+                    for (HashEntry<K,V> e = tab[i]; e != null; e = e.next) {
+                        K key = e.keyRef.get();
+]]>
+</codefragment>
+</duplication>
+<duplication lines="26" tokens="112">
+<file line="673" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java"/>
+<file line="891" path="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/jboss/ConcurrentReferenceHashMap.java"/>
+<codefragment>
+<![CDATA[
+                             float loadFactor, int concurrencyLevel) {
+        if (!(loadFactor > 0) || initialCapacity < 0 || concurrencyLevel <= 0)
+            throw new IllegalArgumentException();
+
+        if (concurrencyLevel > MAX_SEGMENTS)
+            concurrencyLevel = MAX_SEGMENTS;
+
+        // Find power-of-two sizes best matching arguments
+        int sshift = 0;
+        int ssize = 1;
+        while (ssize < concurrencyLevel) {
+            ++sshift;
+            ssize <<= 1;
+        }
+        segmentShift = 32 - sshift;
+        segmentMask = ssize - 1;
+        this.segments = Segment.newArray(ssize);
+
+        if (initialCapacity > MAXIMUM_CAPACITY)
+            initialCapacity = MAXIMUM_CAPACITY;
+        int c = initialCapacity / ssize;
+        if (c * ssize < initialCapacity)
+            ++c;
+        int cap = 1;
+        while (cap < c)
+            cap <<= 1;
+]]>
+</codefragment>
+</duplication>
+</pmd-cpd>

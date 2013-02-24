@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.3" timestamp="2013-02-24T21:52:23.444">
+<file name="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/java/lang/reflect/Proxy.java">
+<violation beginline="240" endline="240" begincolumn="60" endcolumn="60" rule="EmptyStatementNotInLoop" ruleset="Basic Rules" package="java.lang.reflect" class="Proxy" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyStatementNotInLoop" priority="3">
+An empty statement (semicolon) not part of a loop
+</violation>
+<violation beginline="242" endline="244" begincolumn="45" endcolumn="9" rule="EmptyIfStmt" ruleset="Basic Rules" package="java.lang.reflect" class="Proxy" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyIfStmt" priority="3">
+Avoid empty if statements
+</violation>
+<violation beginline="408" endline="409" begincolumn="15" endcolumn="13" rule="EmptyCatchBlock" ruleset="Basic Rules" package="java.lang.reflect" class="Proxy" method="getProxyClass" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+<file name="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/concurrent/ConcurrentWeakHashMap.java">
+<violation beginline="250" endline="252" begincolumn="22" endcolumn="9" rule="UnnecessaryFinalModifier" ruleset="Basic Rules" package="org.greencheek.concurrent" class="ConcurrentWeakHashMap$HashEntry" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnnecessaryFinalModifier" priority="3">
+Unnecessary final modifier in final class
+</violation>
+<violation beginline="347" endline="349" begincolumn="22" endcolumn="9" rule="UnnecessaryFinalModifier" ruleset="Basic Rules" package="org.greencheek.concurrent" class="ConcurrentWeakHashMap$Segment" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnnecessaryFinalModifier" priority="3">
+Unnecessary final modifier in final class
+</violation>
+<violation beginline="896" endline="896" begincolumn="17" endcolumn="19" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.greencheek.concurrent" class="ConcurrentWeakHashMap" method="containsValue" variable="sum" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'sum'.
+</violation>
+<violation beginline="899" endline="899" begincolumn="21" endcolumn="21" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.greencheek.concurrent" class="ConcurrentWeakHashMap" method="containsValue" variable="c" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'c'.
+</violation>
+<violation beginline="907" endline="907" begincolumn="25" endcolumn="25" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.greencheek.concurrent" class="ConcurrentWeakHashMap" method="containsValue" variable="c" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'c'.
+</violation>
+</file>
+<file name="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/waiters/BusySpinWaitStrategy.java">
+<violation beginline="14" endline="16" begincolumn="52" endcolumn="9" rule="EmptyWhileStmt" ruleset="Basic Rules" package="org.greencheek.waiters" class="BusySpinWaitStrategy" method="dowait" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyWhileStmt" priority="3">
+Avoid empty while statements
+</violation>
+</file>
+<file name="/Users/dominictootell/git/concurrent-reflect-proxy/target/checkout/src/main/java/org/greencheek/waiters/YieldingWaitStrategy.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="31" rule="UnusedImports" ruleset="Import Statement Rules" package="org.greencheek.waiters" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.lang.ref.Reference'
+</violation>
+</file>
+</pmd>
